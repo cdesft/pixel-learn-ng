@@ -109,7 +109,7 @@
   .pixel-badge {
     @apply inline-flex items-center gap-2 px-4 py-2;
     @apply font-pixel text-[10px] text-white uppercase tracking-wide;
-    @apply bg-status-active border-3 border-[#2C3E50] rounded-full;
+    @apply bg-status-active border-4 border-[#2C3E50] rounded-full;
     @apply shadow-[0_4px_0_#2C3E50];
     text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
   }
