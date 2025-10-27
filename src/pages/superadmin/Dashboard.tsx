@@ -4,6 +4,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { db } from '@/lib/firebase';
 import { collection, query, getDocs, addDoc, serverTimestamp } from 'firebase/firestore';
 import { seedDemoData } from '@/lib/demoData';
+import { sendEmail, generateSchoolAdminWelcomeEmail } from '@/lib/resend';
 import { PixelMascot } from '@/components/PixelMascot';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
@@ -23,12 +24,8 @@ const SuperadminDashboard = () => {
   });
 
   useEffect(() => {
-    if (!user || userRole !== 'superadmin') {
-      navigate('/superadmin/access/login');
-      return;
-    }
     fetchDashboardData();
-  }, [user, userRole]);
+  }, []);
 
   const fetchDashboardData = async () => {
     try {

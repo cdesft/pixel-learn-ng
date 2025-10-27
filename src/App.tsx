@@ -7,6 +7,10 @@ import { AuthProvider } from "./contexts/AuthContext";
 import Index from "./pages/Index";
 import SuperadminLogin from "./pages/superadmin/Login";
 import SuperadminDashboard from "./pages/superadmin/Dashboard";
+import AdminLogin from "./pages/admin/Login";
+import AdminDashboard from "./pages/admin/Dashboard";
+import ParentLogin from "./pages/parent/Login";
+import ParentDashboard from "./pages/parent/Dashboard";
 import StudentLogin from "./pages/student/Login";
 import StudentOnboarding from "./pages/student/Onboarding";
 import StudentLearn from "./pages/student/Learn";
@@ -27,6 +31,14 @@ const App = () => (
             {/* Superadmin Routes */}
             <Route path="/superadmin/access/login" element={<SuperadminLogin />} />
             <Route path="/superadmin/dashboard" element={<SuperadminDashboard />} />
+            
+            {/* School Admin Routes */}
+            <Route path="/:schoolSlug/admin/login" element={<AdminLogin />} />
+            <Route path="/:schoolSlug/admin/dashboard" element={<AdminDashboard />} />
+            
+            {/* Parent Routes */}
+            <Route path="/:schoolSlug/parent/login" element={<ParentLogin />} />
+            <Route path="/:schoolSlug/parent/dashboard" element={<ParentDashboard />} />
             
             {/* Student Routes */}
             <Route path="/:schoolSlug/pupil/login" element={<StudentLogin />} />
